@@ -47,7 +47,7 @@ function countBooksByAuthor(author) {
 } 
 
 function countBooksByFirstLetter(letter) {
-  letterCount = 0;
+  let letterCount = 0;
   letter = letter.toUpperCase();
   for(let i = 0; i < catalogue.length; i++) {
     if(letter === catalogue[i].title[0]) {
@@ -76,8 +76,13 @@ function getBooksByAuthor(author) {
 }
 
 function checkQuantity(title, quantity) {
-  // Your code here
-}
+  for(let i = 0; i < catalogue.length; i++) {
+    if (title === catalogue[i].title && quantity <= catalogue[i].quantity) {
+      return true}
+    } 
+    return false;
+  }
+  
 
 module.exports = {
   countBooksByAuthor,
